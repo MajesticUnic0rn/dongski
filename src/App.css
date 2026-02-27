@@ -1,0 +1,69 @@
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.canvas-container canvas {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.overlay h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 10vw, 8rem);
+  color: #ffecd2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow:
+    0 0 40px rgba(255, 170, 50, 0.3),
+    0 0 80px rgba(255, 120, 20, 0.15);
+  line-height: 1;
+  text-align: center;
+  margin-bottom: 0.2em;
+  user-select: none;
+}
+
+.overlay p {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+  color: rgba(255, 220, 180, 0.6);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 16px;
+  right: 20px;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.attribution a {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.65rem;
+  color: rgba(255, 220, 180, 0.3);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.attribution a:hover {
+  color: rgba(255, 220, 180, 0.6);
+}
