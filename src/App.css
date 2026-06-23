@@ -1,3 +1,150 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Tab bar */
+.tabs {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  gap: 8px;
+  padding: 12px 20px;
+  z-index: 10;
+}
+
+.tab {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 220, 180, 0.6);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 220, 180, 0.2);
+  border-radius: 999px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.tab:hover {
+  color: #ffecd2;
+  border-color: rgba(255, 220, 180, 0.5);
+}
+
+.tab--active {
+  color: #1a1210;
+  background: #ffecd2;
+  border-color: #ffecd2;
+}
+
+/* Home tab */
+.home {
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #1a1210;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 1.2vh, 14px);
+  padding: 32px 24px 24px;
+}
+
+.home-greeting {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  color: #ffecd2;
+  text-align: center;
+  text-shadow:
+    0 0 40px rgba(255, 170, 50, 0.3),
+    0 0 80px rgba(255, 120, 20, 0.15);
+  margin: 0;
+}
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 2vh, 28px);
+  min-height: 0;
+}
+
+.photo-row {
+  display: flex;
+  gap: clamp(12px, 2vw, 28px);
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photo-box {
+  position: relative;
+  margin: 0;
+  border: 4px solid #ffd24a;
+  border-radius: 4px;
+  padding: 0;
+  width: clamp(150px, 22vw, 300px);
+  height: clamp(180px, 30vh, 320px);
+  background-repeat: no-repeat;
+}
+
+.photo-box--becky {
+  background-image: url('/photos/becky.jpg');
+  /* rotated right (landscape) — face on the right */
+  background-size: cover;
+  background-position: 75% 42%;
+}
+
+.photo-box--me {
+  background-image: url('/photos/me.jpg');
+  /* landscape — zoom in on the rider */
+  background-size: 320%;
+  background-position: 50% 42%;
+}
+
+.photo-box--momo {
+  background-image: url('/photos/momo.png');
+  /* near-square — fill the box */
+  background-size: cover;
+  background-position: 55% 45%;
+}
+
+.photo-box figcaption {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1a1210;
+  background: #ffd24a;
+  padding: 4px 12px;
+  line-height: 1.2;
+}
+
+.photo-box--me {
+  border-color: #3b82f6;
+}
+
+.photo-box--me figcaption {
+  color: #fff;
+  background: #3b82f6;
+}
+
+.photo-box--momo {
+  border-color: #34d399;
+}
+
+.photo-box--momo figcaption {
+  color: #1a1210;
+  background: #34d399;
+}
+
 .canvas-container {
   position: relative;
   width: 100%;

@@ -5,7 +5,33 @@ import Scene from './components/Scene'
 import Env from './components/Env'
 import './App.css'
 
-export default function App() {
+function Home() {
+  return (
+    <div className="home">
+      <h1 className="home-greeting">damn you found us. Hi</h1>
+
+      <div className="photo-grid">
+        <div className="photo-row photo-row--apex">
+          <figure className="photo-box photo-box--momo" role="img" aria-label="momo">
+            <figcaption>momo</figcaption>
+          </figure>
+        </div>
+
+        <div className="photo-row photo-row--base">
+          <figure className="photo-box photo-box--becky" role="img" aria-label="becky">
+            <figcaption>becky</figcaption>
+          </figure>
+
+          <figure className="photo-box photo-box--me" role="img" aria-label="Dong">
+            <figcaption>Dong</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function DumbStuff() {
   const [degraded, setDegraded] = useState(false)
 
   return (
@@ -39,6 +65,31 @@ export default function App() {
           Cinnamon model by Qlone (CC-BY-ND-4.0)
         </a>
       </div>
+    </div>
+  )
+}
+
+export default function App() {
+  const [tab, setTab] = useState('home')
+
+  return (
+    <div className="app">
+      <nav className="tabs">
+        <button
+          className={tab === 'home' ? 'tab tab--active' : 'tab'}
+          onClick={() => setTab('home')}
+        >
+          Home
+        </button>
+        <button
+          className={tab === 'dumb' ? 'tab tab--active' : 'tab'}
+          onClick={() => setTab('dumb')}
+        >
+          dumb stuff
+        </button>
+      </nav>
+
+      {tab === 'home' ? <Home /> : <DumbStuff />}
     </div>
   )
 }
